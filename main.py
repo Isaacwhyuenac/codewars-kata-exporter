@@ -1,5 +1,6 @@
 import json
 import os
+
 from helper.api import CodeWarsApi
 from helper.kata import KataParser
 
@@ -17,6 +18,7 @@ katas = parser.parse_katas()
 api = CodeWarsApi(setup['codewars']['api_key'])
 
 print('Exporting katas...')
+
 for i, kata in enumerate(katas):
     print('\r{}/{} katas exported.'.format(i+1, len(katas)), end='')
 
@@ -24,7 +26,8 @@ for i, kata in enumerate(katas):
 
     for language, source_code in zip(kata.languages, kata.source_codes):
         file_dir = os.path.join(
-            base_dir, language, kata.difficulty, kata.title, )
+            base_dir, language, kata.difficulty, kata.title,)
+        print(file_dir)
         if not os.path.exists(file_dir):
             os.makedirs(file_dir)
 

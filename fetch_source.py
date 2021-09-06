@@ -1,11 +1,12 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
 import json
 import time
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+from webdriver_manager.chrome import ChromeDriverManager
 
 with open('./setup.json') as fin:
     setup = json.load(fin)
@@ -19,7 +20,7 @@ passwordElem = driver.find_element_by_id("user_password")
 usernameElem.send_keys(setup['codewars']['email'])
 passwordElem.send_keys(setup['codewars']['password'])
 
-driver.find_element_by_xpath("//button[1]").click()
+driver.find_element_by_xpath("//button[2]").click()
 
 driver.find_element_by_xpath(
     "//div[contains(@class, 'profile-pic')]").click()
