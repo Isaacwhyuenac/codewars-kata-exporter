@@ -32,6 +32,19 @@ class Kata:
         href = self.soup.find('div', {'class': 'item-title'}).find('a')['href']
         return href.split('/')[-1]
 
+    @property
+    def get_languages_and_source_codes(self):
+        documents = (self.soup
+                     .findAll('div', {
+                         'class': 'markdown prose max-w-none'}
+                     ))
+        languages = [document.find('pre').find('code')
+                     .get('data-language') for document in documents]
+
+        codes = [''.join(code.findAll(text=True)) for code in documents]
+
+        return zip(languages, codes)
+
 
 class KataParser:
     def __init__(self, html):

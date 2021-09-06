@@ -28,6 +28,9 @@ WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.LINK_TEXT, "Solutions")))
 driver.find_element_by_link_text('Solutions').click()
 
+# Change the url directly
+# driver.get('https://www.codewars.com/users/whyuenac/completed_solutions')
+
 nReloads = setup['reloads_in_browser']
 elem = driver.find_element_by_tag_name("body")
 for _ in range(nReloads):
