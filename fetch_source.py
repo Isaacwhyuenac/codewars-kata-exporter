@@ -29,14 +29,26 @@ passwordElem.send_keys(setup['codewars']['password'])
 
 driver.find_element_by_xpath("//button[2]").click()
 
+#########################################
+#
+# For Normal Accounts
+#
+##########################################
+
 # driver.find_element_by_xpath(
 #     "//div[contains(@class, 'profile-pic')]").click()
 # WebDriverWait(driver, 10).until(
 #     EC.presence_of_element_located((By.LINK_TEXT, "Solutions")))
 # driver.find_element_by_link_text('Solutions').click()
 
+#########################################
+#
+# For Disabled Accounts
+#
+##########################################
+
 # Change the url directly
-driver.get('https://www.codewars.com/users/whyuenac/completed_solutions')
+# driver.get('https://www.codewars.com/users/whyuenac/completed_solutions')
 
 nReloads = setup['reloads_in_browser']
 elem = driver.find_element_by_tag_name("body")
