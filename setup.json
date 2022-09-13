@@ -9,7 +9,7 @@
     "agda": ".agda",
     "bf": ".bf",
     "c": ".c",
-    "c#": ".cs",
+    "csharp": ".cs",
     "c++": ".cpp",
     "clojure": ".clj",
     "coffeescript": ".coffee",

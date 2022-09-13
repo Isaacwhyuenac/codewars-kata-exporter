@@ -22,7 +22,7 @@ api = CodeWarsApi(setup['codewars']['api_key'])
 print('Exporting katas...')
 
 for i, kata in enumerate(katas):
-    print('\r{}/{} katas exported.'.format(i+1, len(katas)), end='')
+    print('\r{}/{} katas exported.'.format(i + 1, len(katas)), end='')
 
     kata_description = api.get_kata_description(kata.kata_id)
 
