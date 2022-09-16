@@ -20,7 +20,7 @@
     "elm": ".elm",
     "erlang": ".er",
     "fsharp": ".fs",
-    "fortran": ".f",
+    "fortran": ".f90",
     "go": ".go",
     "groovy": ".groovy",
     "haskell": ".hs",
