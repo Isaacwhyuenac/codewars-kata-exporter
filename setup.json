@@ -10,7 +10,7 @@
     "bf": ".bf",
     "c": ".c",
     "csharp": ".cs",
-    "c++": ".cpp",
+    "cpp": ".cpp",
     "clojure": ".clj",
     "coffeescript": ".coffee",
     "coq": ".coq",
