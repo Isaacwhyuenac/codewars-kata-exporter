@@ -35,11 +35,11 @@ driver.find_element_by_xpath("//button[2]").click()
 #
 ##########################################
 
-# driver.find_element_by_xpath(
-#     "//div[contains(@class, 'profile-pic')]").click()
-# WebDriverWait(driver, 10).until(
-#     EC.presence_of_element_located((By.LINK_TEXT, "Solutions")))
-# driver.find_element_by_link_text('Solutions').click()
+driver.find_element_by_xpath(
+    "//div[contains(@class, 'profile-pic')]").click()
+WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.LINK_TEXT, "Solutions")))
+driver.find_element_by_link_text('Solutions').click()
 
 #########################################
 #
