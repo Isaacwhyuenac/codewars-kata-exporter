@@ -18,7 +18,8 @@ chrome_options.add_argument("--headless")
 # GeckoDriverManager.install()
 driver = webdriver.Chrome(
     ChromeDriverManager().install(),
-    chrome_options=chrome_options)
+    chrome_options=chrome_options
+)
 driver.get("https://www.codewars.com/users/sign_in")
 
 usernameElem = driver.find_element_by_id("user_email")
