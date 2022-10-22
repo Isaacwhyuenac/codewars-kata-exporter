@@ -11,6 +11,8 @@
     "c": ".c",
     "csharp": ".cs",
     "cpp": ".cpp",
+    "c++": ".cpp",
+    "objc": ".m",
     "clojure": ".clj",
     "coffeescript": ".coffee",
     "coq": ".coq",
