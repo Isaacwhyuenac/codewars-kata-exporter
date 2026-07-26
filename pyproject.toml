@@ -1,0 +1,15 @@
+[project]
+name = "codewars-kata-exporter"
+version = "0.1.0"
+description = "Export Codewars kata solutions to a local file structure"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "beautifulsoup4==4.6.0",
+    "requests>=2.20.0",
+    "selenium==3.8.0",
+    "webdriver-manager",
+]
+
+[tool.uv]
+package = false

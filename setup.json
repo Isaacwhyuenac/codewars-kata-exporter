@@ -1,10 +1,10 @@
 {
   "codewars": {
-    "email": "",
-    "password": "",
+    "email": "isaac_lefrancois@outlook.fr",
+    "password": "KxC4XC7WzS6e5Gn",
     "api_key": ""
   },
-  "download_folder": "./solutions",
+  "download_folder": "../codewars-exercise/",
   "file_extensions": {
     "agda": ".agda",
     "bf": ".bf",

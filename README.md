@@ -40,11 +40,13 @@ solutions/
 ___
 ## How to install
 
-First off, you need to have [Python 3](https://www.python.org/download/releases/3.0/) installed in your machine. Then install all python dependencies required:
+First off, you need [Python 3.8+](https://www.python.org/downloads/) and [uv](https://docs.astral.sh/uv/). Then install dependencies:
 
-`$ pip3 install -r requirements.txt`
+```bash
+uv sync
+```
 
-To use Selenium you need to install a webdriver to interface with a specific browser. The browser I have chosen to use in the script was Chrome, thus you can download it [here](https://sites.google.com/a/chromium.org/chromedriver/downloads).
+To use Selenium you need to install a webdriver to interface with a specific browser. The browser I have chosen to use in the script was Chrome, thus you can download it [here](https://sites.google.com/a/chromium.org/chromedriver/downloads). (The project also uses `webdriver-manager`, which can fetch ChromeDriver automatically.)
 
 ___
 ## How to run
@@ -78,7 +80,9 @@ Before executing the script, it is necessary to fill some information in `setup.
 
 Now run the script responsible for fetching the HTML:
 
-`$ python fetch_source.py`
+```bash
+uv run python fetch_source.py
+```
 
 A chrome window will open and then will start to automatically:
 1. log into your account;
@@ -91,6 +95,8 @@ After finishing, the script will save the HTML in `./source.html`
 
 Lastly, run the script responsible for parsing the HTML and creating the file structure:
 
-`$ python main.py`
+```bash
+uv run python main.py
+```
 
 Done! 
