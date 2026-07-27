@@ -58,6 +58,7 @@ Before executing the script, it is necessary to fill some information in `setup.
   "codewars": {
     "email": "foo@bar.com",   <------------ Your login email
     "password": "foo123",     <------------ Your login password
+    "username": "your-user",  <------------ Optional; auto-detected after login if omitted
     "api_key": "foofoo"       <------------ Codewars API token. Can be found under your account settings
   },
   "download_folder": "./solutions", <------ Root directory wherein the katas will be placed
@@ -72,10 +73,13 @@ Before executing the script, it is necessary to fill some information in `setup.
     "php": ".php",
     "ruby": ".rb"
   },
-  "reloads_in_browser": 100   <------------ # of attempts to reload the page while scrolling down. Each
-}                                           attempt takes 2s, which is the time I deemed enough to load
-                                            more katas. This is 'hacky' part I mentioned about. Feel free
-                                            to fine-tune this value to suit you best
+  "reloads_in_browser": 100,  <------------ Max scroll passes while loading solutions (~2s each).
+  "headless": true,           <------------ Set false to watch the browser while debugging.
+  "max_workers": 4,           <------------ Parallel workers in main.py for API/file export
+  "request_delay_seconds": 0.6, <---------- Global min spacing between ALL HTTP calls
+  "max_retries": 6            <------------ Retries on 429/5xx (honors Retry-After)
+}                                           Scrolling stops early once page height and kata count
+                                            stop changing.
 ```
 
 Now run the script responsible for fetching the HTML:
@@ -84,10 +88,10 @@ Now run the script responsible for fetching the HTML:
 uv run python fetch_source.py
 ```
 
-A chrome window will open and then will start to automatically:
+Chrome will start (headless by default) and then:
 1. log into your account;
-2. go to your solutions page;
-3. scroll down and wait according to the value of `reloads_in_browser` in `setup.json`.
+2. open `/users/<username>/completed_solutions` (username from setup or auto-detected);
+3. scroll until solutions finish loading or `reloads_in_browser` is reached.
 
 After finishing, the script will save the HTML in `./source.html`
 
